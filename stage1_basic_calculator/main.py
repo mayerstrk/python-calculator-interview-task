@@ -1,5 +1,11 @@
-from .operations import add
-from .input_validation import validate_input
+try:
+    # when the script is run as part of a package
+    from .operations import add
+    from .input_validation import validate_input
+except ImportError:
+    # when the script is run directly
+    from operations import add
+    from input_validation import validate_input
 
 
 def main():

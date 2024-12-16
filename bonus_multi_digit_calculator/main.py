@@ -1,5 +1,10 @@
-from .operations import add, subtract, multiply, divide, integer_division
-from .input_validation import validate_input
+try:
+    from .operations import add, subtract, multiply, divide, integer_division
+    from .input_validation import validate_input
+except ImportError:
+    # For when the script is run directly
+    from operations import add, subtract, multiply, divide, integer_division
+    from input_validation import validate_input
 
 
 def parse_calculation(calculation):

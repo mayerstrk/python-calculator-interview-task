@@ -28,3 +28,7 @@ def main():
         except ValueError as e:
             print(f"Invalid input: {e}")
             print("Please try again with a valid single-digit addition (e.g., 4+3)")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,14 @@
-from .operations import add, subtract, multiply, divide
-from .input_validation import validate_single_calculation, validate_calculation_count
+try:
+    # For when the script is run as part of a package
+    from .operations import add, subtract, multiply, divide
+    from .input_validation import (
+        validate_calculation_count,
+        validate_single_calculation,
+    )
+except ImportError:
+    # For when the script is run directly
+    from operations import add, subtract, multiply, divide
+    from input_validation import validate_calculation_count, validate_single_calculation
 
 
 def calculate(first_num, operator, second_num):
@@ -52,3 +61,7 @@ def main():
                 print(
                     "Please try again with a valid single-digit calculation (e.g., 4+3, 5*2)"
                 )
+
+
+if __name__ == "__main__":
+    main()

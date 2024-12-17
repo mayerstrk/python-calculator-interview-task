@@ -16,7 +16,12 @@ def main():
         try:
             calculation = input("What do you want to calculate? ")
 
-            validate_input(calculation)
+            validation_result = validate_input(calculation)
+
+            is_input_valid = validation_result["success"]
+
+            if not is_input_valid:
+                raise validation_result["error"]
 
             first_num = int(calculation[0])
             second_num = int(calculation[2])
